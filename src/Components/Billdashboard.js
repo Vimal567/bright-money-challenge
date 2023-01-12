@@ -5,7 +5,15 @@ import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
 import SaveIcon from '@mui/icons-material/Save';
 import PostAddIcon from '@mui/icons-material/PostAdd';
 
-const Billdashboard = ({billData, handleDelete, editMode, handleEditButtonClick, handleSaveClick, handleEditChange}) => {
+const Billdashboard = (
+    {billData,
+     handleDelete,
+     editMode,
+     handleEditButtonClick,
+     handleSaveClick,
+     handleEditChange,
+     handleAddButtonClick,
+    }) => {
 
     return(
         <div className="bills">
@@ -28,32 +36,36 @@ const Billdashboard = ({billData, handleDelete, editMode, handleEditButtonClick,
                  </div>
                 </Paper>
                 :<Paper 
-            key={index}
-            elevation={3}
-            className="bill-paper"
-            >
-             <div className="bill-container">
-                <div className="bill-items">Description: {item.description}</div>
-                <div className="bill-items">Category: {item.category}</div>
-                <div className="bill-items">Amount: {item.amount}</div>
-                <div className="bill-items">Date: {item.date}</div>
-             </div>
-             <div className="crud-section">
-                <button onClick={() => handleEditButtonClick(index)}  className="crud-icons"><EditIcon /></button>
-                <button onClick={() => handleDelete(index)} className="crud-icons"><DeleteOutlineIcon /></button>
-             </div>
-            </Paper>}</div>
-            })
-            }
-            {<Paper 
-            elevation={3}
-            className="bill-paper bill-cursor"
-            >
-                <div className="bill-add">
-                <PostAddIcon />
+                key={index}
+                elevation={3}
+                className="bill-paper"
+                >
+                <div className="bill-container">
+                    <div className="bill-items">Description: {item.description}</div>
+                    <div className="bill-items">Category: {item.category}</div>
+                    <div className="bill-items">Amount: {item.amount}</div>
+                    <div className="bill-items">Date: {item.date}</div>
                 </div>
-                <div className="bill-add-text"><h4>Add Bill</h4></div>
-            </Paper>}
+                <div className="crud-section">
+                    <button onClick={() => handleEditButtonClick(index)}  className="crud-icons"><EditIcon /></button>
+                    <button onClick={() => handleDelete(index)} className="crud-icons"><DeleteOutlineIcon /></button>
+                </div>
+                </Paper>}</div>
+                })
+                }
+                {<Paper
+                key={billData.length + 1}
+                elevation={3}
+                className="bill-paper bill-cursor"
+                onClick={handleAddButtonClick}
+                >
+                    <div className="bill-add">
+                        <PostAddIcon />
+                    </div>
+                    <div className="bill-add-text">
+                        <h4>Add Bill</h4>
+                    </div>
+                </Paper>}
         </div>
     )
 }

@@ -29,7 +29,7 @@ const Landingpage = () => {
     const [editMode, setEditMode] = useState({
         editStatus: false,
         billId: null,
-      });
+    });
 
     const handlesort = (event) => {
         const newValue = event.target.value;
@@ -58,6 +58,20 @@ const Landingpage = () => {
     const updateBillData = (e, billId) => {
         let billCopy = JSON.parse(JSON.stringify(billData));
         billCopy[billId][e.target.name] = e.target.value;
+        setBillData(billCopy);
+    }
+
+    const addNewBillObject = () => {
+        let billCopy = JSON.parse(JSON.stringify(billData));
+        const newLength = billCopy.length + 1;
+        const newObj = {
+            id: newLength,
+            Description: "",
+            Category: "",
+            Amount: "",
+            Date: "",
+        }
+        billCopy = [...billCopy,newObj]
         console.log(billCopy)
         setBillData(billCopy);
     }
@@ -86,6 +100,11 @@ const Landingpage = () => {
                       });
                 }}
                 handleEditChange = {(e, billId) => updateBillData(e, billId)}
+                handleAddButtonClick={(billId) =>{
+                    setEditMode({ addStatus: true, billId})
+                    addNewBillObject()
+                    }
+                }
             />
             <Modal
                 open={open}
