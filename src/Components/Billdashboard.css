@@ -1,0 +1,55 @@
+.bills{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+.bill-paper{
+    width: 15rem;
+    height: 12rem;
+    margin: 3rem;
+    display: inline-block;
+    position: relative;
+}
+.bill-edit-paper{
+    width: 15rem;
+    height: 16rem;
+    margin: 3rem;
+    display: inline-block;
+    position: relative;
+}
+.bill-container{
+    display: flex;
+    flex-direction: column;
+}
+.bill-items{
+    padding-left: 1rem;
+    padding-top: 1.2rem;
+}
+.crud-section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 2rem;
+    position: absolute;
+    top: 4%;
+    right: 1%;
+}
+.crud-icons{
+    border: none;
+    background-color: inherit;
+}
+.crud-icons:hover{
+    cursor: pointer;
+}
+.bill-add{
+    display: flex;
+    justify-content: center;
+    margin-top: 35%;
+}
+.bill-cursor:hover{
+    cursor: pointer;
+}
+.bill-add-text{
+    text-align: center;
+}

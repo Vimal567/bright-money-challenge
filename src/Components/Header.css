@@ -1,0 +1,16 @@
+.header{
+    width: 100vw;
+    height: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+#navbg{
+    background-color: rgb(196, 194, 194);
+}
+.main-heading{
+    color: black;
+    font-weight: bold;
+    font-size: larger;
+}
